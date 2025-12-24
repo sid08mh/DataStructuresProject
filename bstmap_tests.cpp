@@ -23,10 +23,6 @@ class Random {
    * Generate a random integer in the range 0 (inclusive) to `max` (exclusive)
    */
   static int randInt(int max) {
-    // Even though mt19937 is standardized, STL distributions aren't!
-    // So, unfortunately, even though this is biased, we're forced to
-    // do something like this. Technically uint32_fast_t isn't...
-    // totally consistent across platforms? But within reason it works.
     return rng() % (max + 1);
   }
 };
